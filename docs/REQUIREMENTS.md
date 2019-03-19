@@ -2,9 +2,11 @@ levels
 er zijn minimaal 2 levels
   - een startscherm waar je het spel kan starten
   - een vast level in het spel
+  - je kan een level herstarten
+  - het spel moet uitbreidbaar zijn
   - OPTIONEEL: willekeurig gegenereerde levels
 
-er zijn 3 verschillende soorten onderdelen
+er zijn 2 verschillende soorten onderdelen
  - een speelveld
  - een object op het speelveld
 
@@ -24,7 +26,5 @@ een speler
   - kan een barricade openen
   - kan tegen een eindveld aanlopen
 
-
-
-
-
+### Terminologie
+Position: een XY coordinaat op een playing field
