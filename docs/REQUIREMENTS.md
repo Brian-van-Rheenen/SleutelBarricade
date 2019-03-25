@@ -1,5 +1,6 @@
 levels
-er zijn minimaal 2 levels
+  - er is 1 level
+  - OPTIONEEL: meerdere levels
   - een startscherm waar je het spel kan starten
   - een vast level in het spel
   - je kan een level herstarten
@@ -25,6 +26,12 @@ een speler
   - kan een sleutel oppakken
   - kan een barricade openen
   - kan tegen een eindveld aanlopen
+
+### Informele requirements
+- Unit tests
+- Mocking?
+- 1 Methode getest via decision coverage
+- 1 Methode getest via code coverage
 
 ### Terminologie
 Position: een XY coordinaat op een playing field
