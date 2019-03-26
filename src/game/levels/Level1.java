@@ -7,9 +7,6 @@ import game.Position;
 import game.objects.*;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.image.ImageObserver;
-import java.text.AttributedCharacterIterator;
 import java.util.ArrayList;
 import java.util.List;
 
