@@ -20,6 +20,7 @@ public class PlayingField extends JPanel{
 
             gbc.gridx = pos.getxPosition();
             gbc.gridy = pos.getyPosition();
+
             add(object,gbc);
         }
 

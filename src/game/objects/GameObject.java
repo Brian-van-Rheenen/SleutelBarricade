@@ -3,6 +3,7 @@ package game.objects;
 import game.Position;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.net.URL;
 
@@ -17,7 +18,7 @@ public abstract class GameObject extends JPanel {
     public GameObject(Position position) {
         super();
         this.position = position;
-
+//        setBorder(BorderFactory.createLineBorder(Color.black));
     }
 
     public Position getPosition() {
