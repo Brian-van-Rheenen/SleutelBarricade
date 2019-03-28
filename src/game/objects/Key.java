@@ -9,7 +9,7 @@ public class Key extends GameObject {
     public Key(Position position, int value) {
         super(position);
         this.value = value;
-        setImage(this.getClass().getResource("/resources/key.png"));
+        setImage(this.getClass().getResource("/resources/sprites/key.png"));
     }
 
     public int getValue() {

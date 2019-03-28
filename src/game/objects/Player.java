@@ -8,7 +8,7 @@ public class Player extends GameObject{
 
     public Player(Position position) {
         super(position);
-        setImage(this.getClass().getResource("/resources/player.png"));
+        setImage(this.getClass().getResource("/resources/sprites/player.png"));
     }
 
     // TODO: Write method move
