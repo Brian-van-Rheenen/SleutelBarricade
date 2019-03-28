@@ -48,7 +48,7 @@ public class MainMenu extends Level {
     @Override
     protected JPanel constructLevel() {
         // GIF logo
-        URL logoUrl = this.getClass().getResource("/resources/sprites/sleutel-barricade-logo.gif");
+        URL logoUrl = this.getClass().getResource("/resources/sprites/main-menu/sleutel-barricade-logo.gif");
         ImageIcon logoImage = new ImageIcon(logoUrl);
         JLabel logo = new JLabel(logoImage);
         logo.setBorder(BorderFactory.createEmptyBorder(50, 0, 0, 0));
@@ -66,15 +66,15 @@ public class MainMenu extends Level {
         });
 
         // Images
-        URL characterUrl = this.getClass().getResource("/resources/sprites/player.png");
+        URL characterUrl = this.getClass().getResource("/resources/sprites/main-menu/player.png");
         ImageIcon characterImage = new ImageIcon(characterUrl);
         JLabel character = new JLabel(characterImage);
 
-        URL wallUrl = this.getClass().getResource("/resources/sprites/wall.png");
+        URL wallUrl = this.getClass().getResource("/resources/sprites/main-menu/wall.png");
         ImageIcon wallImage = new ImageIcon(wallUrl);
         JLabel wall = new JLabel(wallImage);
 
-        URL barricadeUrl = this.getClass().getResource("/resources/sprites/barricade.png");
+        URL barricadeUrl = this.getClass().getResource("/resources/sprites/main-menu/barricade.png");
         ImageIcon barricadeImage = new ImageIcon(barricadeUrl);
         JLabel barricade = new JLabel(barricadeImage);
 
