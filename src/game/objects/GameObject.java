@@ -10,6 +10,7 @@ import java.net.URL;
 
 public abstract class GameObject extends JPanel {
 
+    private int value;
     private Position position;
     private URL url;
 
@@ -17,6 +18,14 @@ public abstract class GameObject extends JPanel {
         super();
         this.position = position;
 //        setBorder(BorderFactory.createLineBorder(Color.black));
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return this.value;
     }
 
     public Position getPosition() {

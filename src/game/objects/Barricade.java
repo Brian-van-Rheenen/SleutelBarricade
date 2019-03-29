@@ -4,11 +4,9 @@ import game.Position;
 
 public class Barricade extends GameObject {
 
-    int value;
-
     public Barricade(Position position, int value) {
         super(position);
-        this.value = value;
+        setValue(value);
         setImage(this.getClass().getResource("/resources/sprites/barricade.png"));
     }
 

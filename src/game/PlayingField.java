@@ -54,12 +54,22 @@ public class PlayingField extends JPanel{
             int actualX = cellHeight.intValue() * pos.getxPosition();
             int actualY = cellHeight.intValue() * pos.getyPosition();
 
+            int valueX = cellHeight.intValue() * pos.getxPosition() + 5;
+            int valueY = cellHeight.intValue() * pos.getyPosition() + 17;
+
             try {
                 // Load the image from the URL
                 Image image = ImageIO.read(gameObject.getUrl());
 
                 // Draw the Image on the screen, resize to the full size of the cell
                 g.drawImage(image, actualX, actualY, cellHeight.intValue(), cellHeight.intValue(), this);
+
+                // If the GameObject has a value
+                if(gameObject.getValue() > 0) {
+                    // Create a string with its value in the top left of the cell
+                    g.setFont(new Font("VCR OSD Mono", Font.PLAIN, 16));
+                    g.drawString(Integer.toString(gameObject.getValue()), valueX, valueY);
+                }
 
             } catch (IOException ex) {
                 // We were unable to load the image from the source
