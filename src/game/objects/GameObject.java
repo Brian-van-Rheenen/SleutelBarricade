@@ -28,6 +28,10 @@ public abstract class GameObject extends JPanel {
         return position;
     }
 
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
     public void setImage(URL imagePath){
         url = imagePath;
     }
