@@ -17,12 +17,4 @@ public class Position {
     public int getyPosition() {
         return yPosition;
     }
-
-    public void setxPosition(int xPosition) {
-        this.xPosition = xPosition;
-    }
-
-    public void setyPosition(int yPosition) {
-        this.yPosition = yPosition;
-    }
 }

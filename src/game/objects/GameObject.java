@@ -16,7 +16,6 @@ public abstract class GameObject extends JPanel {
     public GameObject(Position position) {
         super();
         this.position = position;
-//        setBorder(BorderFactory.createLineBorder(Color.black));
     }
 
     public Position getPosition() {
