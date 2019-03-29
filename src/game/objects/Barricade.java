@@ -10,10 +10,7 @@ public class Barricade extends GameObject {
         setImage(this.getClass().getResource("/resources/sprites/barricade.png"));
     }
 
-    // TODO: Write tryOpen method for matching the value of player's currentKey
-    //       to the value of the barricade the player is trying to open.
-    public boolean tryOpen(){
-        return false;
+    public boolean tryOpen(int keyValue) {
+        return getValue() == keyValue;
     }
-
 }
