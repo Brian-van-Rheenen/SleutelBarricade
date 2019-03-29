@@ -5,6 +5,7 @@ import game.Position;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Optional;
 
 /**
  * The player object that the user controls
@@ -29,20 +30,38 @@ public class Player extends GameObject implements KeyListener {
 
         if(playingField.isWithinBoundaries(newPosition)) {
             // TODO: Check if we have collided with an object in the playingField
-            setPosition(newPosition);
-            playingField.repaint();
+            Optional<GameObject> collidedObject = playingField.willCollide(newPosition);
+
+            if(collidedObject.isPresent()) {
+                GameObject collider = collidedObject.get();
+
+                if(collider instanceof Key) {
+                    Key key = (Key) collider;
+
+                    setCurrentKey(key.getValue());
+
+                    playingField.getGameObjects()
+                        .remove(collider);
+
+                    move(newPosition);
+                } else if (collider instanceof Barricade) {
+                    Barricade barricade = (Barricade) collider;
+
+                    if(barricade.tryOpen(getCurrentKey())) {
+                        playingField.getGameObjects()
+                            .remove(collider);
+
+                        move(newPosition);
+                    }
+                }
+
+
+            } else {
+                setPosition(newPosition);
+                playingField.repaint();
+            }
         }
 
-
-    }
-
-    // TODO: Write method pickUpKey, which is used to change the currentKey value.
-    public void pickUpKey(){
-
-    }
-
-    // TODO: Write method dropKey
-    public void dropKey(){
 
     }
 
