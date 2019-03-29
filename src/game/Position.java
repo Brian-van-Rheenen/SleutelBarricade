@@ -1,5 +1,8 @@
 package game;
 
+/**
+ * A coordinate in a finite grid
+ */
 public class Position {
 
     private int xPosition;
@@ -18,11 +21,19 @@ public class Position {
         return yPosition;
     }
 
-    public void setxPosition(int xPosition) {
-        this.xPosition = xPosition;
-    }
+    /**
+     * Check if both the X and Y coordinates are the same for both objects
+     * @return true if the X and Y of both objects are the same
+     */
+    @Override
+    public boolean equals(Object obj) {
 
-    public void setyPosition(int yPosition) {
-        this.yPosition = yPosition;
+        if(obj instanceof Position) {
+            Position otherPosition = (Position) obj;
+            return getxPosition() == otherPosition.getxPosition() && getyPosition() == otherPosition.getyPosition();
+        } else {
+            return false;
+        }
+
     }
 }
