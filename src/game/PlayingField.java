@@ -8,6 +8,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class PlayingField extends JPanel {
 
@@ -34,6 +35,25 @@ public class PlayingField extends JPanel {
         }
 
         return true;
+    }
+
+    /**
+     * Checks if the given Position will hit a GameObject on that Position
+     * @param position the Position to validate if a GameObject is on that Position
+     * @return An Optional that could be collided with the Player
+     */
+    public Optional<GameObject> willCollide(Position position) {
+        for (GameObject object: gameObjects) {
+            if(object.getPosition().equals(position)) {
+                return Optional.of(object);
+            }
+        }
+
+        return Optional.empty();
+    }
+    
+    public List<GameObject> getGameObjects() {
+        return gameObjects;
     }
 
     @Override
