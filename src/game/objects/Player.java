@@ -29,7 +29,8 @@ public class Player extends GameObject implements KeyListener {
 
         if(playingField.isWithinBoundaries(newPosition)) {
             // TODO: Check if we have collided with an object in the playingField
-            position = newPosition;
+            setPosition(newPosition);
+            playingField.repaint();
         }
 
 
@@ -57,8 +58,10 @@ public class Player extends GameObject implements KeyListener {
     public void keyTyped(KeyEvent e) { }
 
     @Override
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(KeyEvent e) { }
 
+    @Override
+    public void keyReleased(KeyEvent e) {
         Position updatedPosition = getPosition();
 
         switch (e.getKeyCode()) {
@@ -87,7 +90,4 @@ public class Player extends GameObject implements KeyListener {
                 break;
         }
     }
-
-    @Override
-    public void keyReleased(KeyEvent e) { }
 }
