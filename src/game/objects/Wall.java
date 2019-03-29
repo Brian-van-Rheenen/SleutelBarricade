@@ -6,7 +6,7 @@ public class Wall extends GameObject{
 
     public Wall(Position position) {
         super(position);
-        setImage(this.getClass().getResource("/resources/wall.png"));
+        setImage(this.getClass().getResource("/resources/sprites/wall.png"));
     }
 
 }

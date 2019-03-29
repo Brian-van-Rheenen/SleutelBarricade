@@ -4,12 +4,10 @@ import game.Position;
 
 public class Barricade extends GameObject {
 
-    int value;
-
     public Barricade(Position position, int value) {
         super(position);
-        this.value = value;
-        setImage(this.getClass().getResource("/resources/barricade.png"));
+        setValue(value);
+        setImage(this.getClass().getResource("/resources/sprites/barricade.png"));
     }
 
     // TODO: Write tryOpen method for matching the value of player's currentKey

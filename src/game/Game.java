@@ -1,6 +1,7 @@
 package game;
 
 import javax.swing.*;
+import java.awt.event.KeyListener;
 
 public class Game {
     private JFrame window = new JFrame();
@@ -31,6 +32,15 @@ public class Game {
         window.setContentPane(level);
         window.revalidate();
         window.repaint();
+        window.requestFocusInWindow();
+    }
+
+    /**
+     * Register a KeyListener for receiving KeyEvents
+     * @param listener the listener to attach to the main game window
+     */
+    public void AttachKeyListener(KeyListener listener) {
+        window.addKeyListener(listener);
     }
 
     /**

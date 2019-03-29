@@ -13,12 +13,12 @@ public class LevelManager {
     public LevelManager(Game game) {
         this.game = game;
 
-        levels.put("MainMenu", new MainMenu(this));
-        levels.put("Level1", new Level1(this));
+        levels.put("MainMenu", new MainMenu(this, game));
+        levels.put("Level1", new Level1(this, game));
     }
 
     public void load(String identifier) {
         Level level = levels.get(identifier);
-        game.loadLevel(level.getPanel());
+        game.loadLevel(level.constructLevel());
     }
 }

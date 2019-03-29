@@ -1,35 +1,29 @@
 package game;
 
+import game.objects.GameObject;
+
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Level extends JPanel {
-    private Position startPosition;
-    private Position endPosition;
-    protected LevelManager levelManager;
-    private JPanel panel;
 
-    public Level(LevelManager levelManager) {
+    protected Game game;
+    protected LevelManager levelManager;
+    protected List<GameObject> gameObjects = new ArrayList<>();
+
+    public Level(LevelManager levelManager, Game game) {
+        this.game = game;
         this.levelManager = levelManager;
-        panel = constructLevel();
     }
 
     /**
      * Construct the level
      * @return A JPanel with a fully constructed level
      */
-    protected abstract JPanel constructLevel();
+    public abstract JPanel constructLevel();
 
-    public JPanel getPanel() {
-        return panel;
+    public List<GameObject> getGameObjects() {
+        return gameObjects;
     }
-
-    public Position getStartPosition() {
-        return this.startPosition;
-    }
-
-    public Position getEndPosition() {
-        return this.endPosition;
-    }
-
-
 }

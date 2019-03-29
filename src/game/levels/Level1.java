@@ -1,28 +1,29 @@
 package game.levels;
 
-import game.Level;
-import game.LevelManager;
-import game.PlayingField;
-import game.Position;
+import game.*;
 import game.objects.*;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Level1 extends Level {
 
-    public Level1(LevelManager levelManager) {
-        super(levelManager);
+    public Level1(LevelManager levelManager, Game game) {
+        super(levelManager, game);
     }
 
     @Override
-    protected JPanel constructLevel() {
+    public JPanel constructLevel() {
 
         // TODO: Write method constructLevel in such a way that it contains a complete level
+        PlayingField field = new PlayingField(this);
 
-        List<GameObject> gameObjects = new ArrayList<>();
-        gameObjects.add(new Player(new Position(0,0)));
+        // Create player and register for keyboard input with the KeyListener
+        Player player = new Player(new Position(0,0), field);
+
+        game.AttachKeyListener(player);
+        add(player);
+
+        gameObjects.add(player);
 
         gameObjects.add(new Goal(new Position(9,9)));
 
@@ -48,7 +49,6 @@ public class Level1 extends Level {
         gameObjects.add(new Wall(new Position(7,6)));
         gameObjects.add(new Wall(new Position(7,8)));
         gameObjects.add(new Wall(new Position(7,9)));
-
 
         gameObjects.add(new Barricade(new Position(1,5), 200));
         gameObjects.add(new Barricade(new Position(1,5), 200));
@@ -85,8 +85,6 @@ public class Level1 extends Level {
         gameObjects.add(new Barricade(new Position(9,3), 90));
         gameObjects.add(new Barricade(new Position(9,4), 50));
 
-        JPanel panel = new PlayingField(gameObjects);
-
-        return panel;
+        return field;
     }
 }
