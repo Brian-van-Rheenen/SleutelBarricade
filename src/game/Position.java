@@ -21,6 +21,7 @@ public class Position {
         return yPosition;
     }
 
+
     /**
      * Check if both the X and Y coordinates are the same for both objects
      * @return true if the X and Y of both objects are the same
@@ -36,4 +37,5 @@ public class Position {
         }
 
     }
+
 }

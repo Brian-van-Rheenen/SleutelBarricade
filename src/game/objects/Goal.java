@@ -9,8 +9,6 @@ public class Goal extends GameObject{
         setImage(this.getClass().getResource("/resources/sprites/goal.png"));
     }
 
-    // TODO: Write finish method that checks if the player has reached the goal. If so, the level is finished.
-    public boolean finish(){
-        return false;
-    }
+
+
 }

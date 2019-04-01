@@ -14,6 +14,7 @@ public abstract class GameObject extends JPanel {
     public GameObject(Position position) {
         super();
         this.position = position;
+
     }
 
     public void setValue(int value) {
@@ -22,6 +23,7 @@ public abstract class GameObject extends JPanel {
 
     public int getValue() {
         return this.value;
+
     }
 
     public Position getPosition() {
