@@ -1,9 +1,12 @@
 package game.levels;
 
 import game.*;
+import game.levels.panels.SideMenu;
 import game.objects.*;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 
 public class Level1 extends Level {
 
@@ -12,7 +15,12 @@ public class Level1 extends Level {
     }
 
     @Override
+    @SuppressWarnings("Duplicates")
     public JPanel constructLevel() {
+
+        // Level container panel
+        JPanel levelContainer =  new JPanel(new GridBagLayout());
+
 
         // TODO: Write method constructLevel in such a way that it contains a complete level
         PlayingField field = new PlayingField(this);
@@ -85,6 +93,48 @@ public class Level1 extends Level {
         gameObjects.add(new Barricade(new Position(9,3), 90));
         gameObjects.add(new Barricade(new Position(9,4), 50));
 
-        return field;
+        //field.setBackground(Color.red);
+
+        JPanel sideMenuPanel = new JPanel();
+
+        JButton sideMenuButton = new JButton("Restart");
+        sideMenuButton.setPreferredSize(new Dimension(220, 50));
+        sideMenuButton.setBackground(new Color(244, 194, 66));
+        sideMenuButton.setFont(new Font("8BIT WONDER", Font.PLAIN, 28));
+        sideMenuButton.setForeground(Color.WHITE);
+        sideMenuButton.setBorder(new LineBorder(new Color(122, 122, 122)));
+        sideMenuButton.setFocusPainted(false);
+        sideMenuButton.addActionListener((e) -> {
+            levelManager.load("Level1");
+        });
+
+        sideMenuPanel.add(sideMenuButton);
+
+        JPanel sideMenuContainer = new JPanel();
+        sideMenuContainer.add(sideMenuPanel);
+
+        GridBagConstraints levelConstraints = new GridBagConstraints();
+        levelConstraints.fill = GridBagConstraints.BOTH;
+        levelConstraints.anchor = GridBagConstraints.CENTER;
+        levelConstraints.gridx = 0;
+        levelConstraints.gridy = 0;
+        levelConstraints.weightx = 1;
+        levelConstraints.weighty = 1;
+
+        levelContainer.add(field, levelConstraints);
+
+        levelConstraints.fill = GridBagConstraints.BOTH;
+        levelConstraints.anchor = GridBagConstraints.EAST;
+        levelConstraints.gridx = 1;
+        levelConstraints.gridy = 0;
+        levelConstraints.weightx = 0.33;
+        levelConstraints.weighty = 1;
+        levelConstraints.insets = new Insets(25, 0, 0, 0);
+
+        SideMenu sideMenu = new SideMenu(levelManager);
+
+        levelContainer.add(sideMenu, levelConstraints);
+
+        return levelContainer;
     }
 }
