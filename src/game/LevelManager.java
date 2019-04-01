@@ -2,11 +2,9 @@ package game;
 
 import game.levels.*;
 
-import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
-import java.util.function.Function;
 
 public class LevelManager {
     private Map<Class<? extends Level>, Callable<Level>> levels = new HashMap<>();
