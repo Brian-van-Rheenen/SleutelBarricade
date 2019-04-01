@@ -9,9 +9,9 @@ public class Game {
 
     /**
      * Create a new game window and attempt to load the specified level
-     * @param startLevel The identifier of the level to load
+     * @param startLevel The level to start the game with
      */
-    public Game(String startLevel) {
+    public Game(Class<? extends Level> startLevel) {
         window.setSize(1080, 720);
         window.setTitle("Sleutel Barricade");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

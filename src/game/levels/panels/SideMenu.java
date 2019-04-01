@@ -1,5 +1,6 @@
 package game.levels.panels;
 
+import game.Level;
 import game.LevelManager;
 
 import javax.swing.*;
@@ -8,7 +9,7 @@ import java.awt.*;
 
 public class SideMenu extends JPanel {
 
-    public SideMenu(LevelManager levelManager) {
+    public SideMenu(LevelManager levelManager, Class<? extends Level> currentLevel) {
         super();
 
         JButton sideMenuButton = new JButton("Restart");
@@ -19,7 +20,7 @@ public class SideMenu extends JPanel {
         sideMenuButton.setBorder(new LineBorder(new Color(122, 122, 122)));
         sideMenuButton.setFocusPainted(false);
         sideMenuButton.addActionListener((e) -> {
-            levelManager.load("Level1");
+            levelManager.load(currentLevel);
         });
 
         add(sideMenuButton);

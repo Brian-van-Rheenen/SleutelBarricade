@@ -105,7 +105,7 @@ public class Level1 extends Level {
         sideMenuButton.setBorder(new LineBorder(new Color(122, 122, 122)));
         sideMenuButton.setFocusPainted(false);
         sideMenuButton.addActionListener((e) -> {
-            levelManager.load("Level1");
+            levelManager.load(this.getClass());
         });
 
         sideMenuPanel.add(sideMenuButton);
@@ -131,7 +131,7 @@ public class Level1 extends Level {
         levelConstraints.weighty = 1;
         levelConstraints.insets = new Insets(25, 0, 0, 0);
 
-        SideMenu sideMenu = new SideMenu(levelManager);
+        SideMenu sideMenu = new SideMenu(levelManager, this.getClass());
 
         levelContainer.add(sideMenu, levelConstraints);
 

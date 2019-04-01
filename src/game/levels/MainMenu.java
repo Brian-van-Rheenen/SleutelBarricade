@@ -64,7 +64,7 @@ public class MainMenu extends Level {
         startButton.setBorder(new LineBorder(new Color(122, 122, 122)));
         startButton.setFocusPainted(false);
         startButton.addActionListener((e) -> {
-            levelManager.load("Level1");
+            levelManager.load(Level1.class);
         });
 
         // Images

@@ -9,19 +9,19 @@ import java.util.concurrent.Callable;
 import java.util.function.Function;
 
 public class LevelManager {
-    private Map<String, Callable<Level>> levels = new HashMap<>();
+    private Map<Class<? extends Level>, Callable<Level>> levels = new HashMap<>();
     private Game game;
 
     public LevelManager(Game game) {
         this.game = game;
 
-        levels.put("MainMenu", () -> new MainMenu(this, game));
-        levels.put("Level1", () -> new Level1(this, game));
+        levels.put(MainMenu.class, () -> new MainMenu(this, game));
+        levels.put(Level1.class, () -> new Level1(this, game));
     }
 
-    public void load(String identifier) {
+    public void load(Class<? extends Level> levelIdentifier) {
         try {
-            Level level = levels.get(identifier).call();
+            Level level = levels.get(levelIdentifier).call();
             game.loadLevel(level.constructLevel());
         } catch (Exception e) {
             System.err.printf("Level Load Failure: %s", e.toString());
