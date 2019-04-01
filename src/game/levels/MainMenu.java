@@ -1,5 +1,6 @@
 package game.levels;
 
+import game.Game;
 import game.Level;
 import game.LevelManager;
 
@@ -13,8 +14,8 @@ import java.net.URL;
  */
 public class MainMenu extends Level {
 
-    public MainMenu(LevelManager levelManager) {
-        super(levelManager);
+    public MainMenu(LevelManager levelManager, Game game) {
+        super(levelManager, game);
     }
 
     /**
@@ -46,7 +47,7 @@ public class MainMenu extends Level {
      * @return the window container panel that has and shows every element in the main menu.
      */
     @Override
-    protected JPanel constructLevel() {
+    public JPanel constructLevel() {
         // GIF logo
         URL logoUrl = this.getClass().getResource("/resources/sprites/main-menu/sleutel-barricade-logo.gif");
         ImageIcon logoImage = new ImageIcon(logoUrl);
