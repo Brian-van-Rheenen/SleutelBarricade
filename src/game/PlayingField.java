@@ -10,6 +10,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Component that renders the GameObjects on screen
+ */
 public class PlayingField extends JPanel {
 
     private List<GameObject> gameObjects;
@@ -56,6 +59,10 @@ public class PlayingField extends JPanel {
         return gameObjects;
     }
 
+    /**
+     * Renders the PlayingField to the screen with all the GameComponents
+     * @param g the graphics component to render to the screen
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -79,6 +86,9 @@ public class PlayingField extends JPanel {
                 g.drawRect(collumn, row, cellHeight.intValue(), cellHeight.intValue());
             }
         }
+
+        int general = cellHeight.intValue() * MAX_HEIGHT_CELL_AMOUNT;
+        setPreferredSize(new Dimension(general, general));
 
         // Draw all the different GameObjects on screen
         for (GameObject gameObject : gameObjects) {
