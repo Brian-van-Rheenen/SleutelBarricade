@@ -15,6 +15,7 @@ public class Player extends GameObject implements KeyListener {
     private int currentKey;
     private PlayingField playingField;
 
+    // TODO: Break the dependency on the PlayingField
     public Player(Position position, PlayingField field) {
         super(position);
         playingField = field;
@@ -23,13 +24,14 @@ public class Player extends GameObject implements KeyListener {
         setImage(this.getClass().getResource("/resources/sprites/player.png"));
     }
 
-    // TODO: Write method move
     // Think about the boundaries! Position has a minimal value of 0,0 and a maximum value of however big the playing field is minus one!
-    private void move(Position newPosition){
-        Position position = getPosition();
 
+    /**
+     * Move the player to a new position, and interact with any GameObjects in the world
+     * @param newPosition the position to move to
+     */
+    private void move(Position newPosition) {
         if(playingField.isWithinBoundaries(newPosition)) {
-            // TODO: Check if we have collided with an object in the playingField
             Optional<GameObject> collidedObject = playingField.willCollide(newPosition);
 
             if(collidedObject.isPresent()) {
