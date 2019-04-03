@@ -59,6 +59,9 @@ public class Player extends GameObject implements KeyListener {
                     Goal goal = (Goal) collider;
                     // Execute the action on level end
                     goal.getGoalHit().run();
+
+                    playingField.getGameObjects()
+                            .remove(collider);
                 }
 
 
