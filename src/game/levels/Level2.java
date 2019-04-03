@@ -1,7 +1,7 @@
 package game.levels;
 
 import game.*;
-import game.levels.panels.SideMenu;
+import game.components.SideMenu;
 import game.objects.*;
 
 import javax.swing.*;
@@ -94,24 +94,6 @@ public class Level2 extends Level {
         gameObjects.add(new Key(new Position(8,6), 500));
         gameObjects.add(new Key(new Position(9,0), 600));
         gameObjects.add(new Key(new Position(9,9), 400));
-
-        JPanel sideMenuPanel = new JPanel();
-
-        JButton sideMenuButton = new JButton("Restart");
-        sideMenuButton.setPreferredSize(new Dimension(220, 50));
-        sideMenuButton.setBackground(new Color(244, 194, 66));
-        sideMenuButton.setFont(new Font("8BIT WONDER", Font.PLAIN, 28));
-        sideMenuButton.setForeground(Color.WHITE);
-        sideMenuButton.setBorder(new LineBorder(new Color(122, 122, 122)));
-        sideMenuButton.setFocusPainted(false);
-        sideMenuButton.addActionListener((e) -> {
-            levelManager.load(this.getClass());
-        });
-
-        sideMenuPanel.add(sideMenuButton);
-
-        JPanel sideMenuContainer = new JPanel();
-        sideMenuContainer.add(sideMenuPanel);
 
         GridBagConstraints levelConstraints = new GridBagConstraints();
         levelConstraints.fill = GridBagConstraints.BOTH;

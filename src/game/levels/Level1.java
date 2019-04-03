@@ -1,11 +1,10 @@
 package game.levels;
 
 import game.*;
-import game.levels.panels.SideMenu;
+import game.components.SideMenu;
 import game.objects.*;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class Level1 extends Level {
@@ -15,7 +14,6 @@ public class Level1 extends Level {
     }
 
     @Override
-    @SuppressWarnings("Duplicates")
     public JPanel constructLevel() {
 
         // Level container panel
@@ -90,24 +88,6 @@ public class Level1 extends Level {
         gameObjects.add(new Barricade(new Position(9,1), 90));
         gameObjects.add(new Barricade(new Position(9,3), 90));
         gameObjects.add(new Barricade(new Position(9,4), 50));
-
-        JPanel sideMenuPanel = new JPanel();
-
-        JButton sideMenuButton_Restart = new JButton("Restart");
-        sideMenuButton_Restart.setPreferredSize(new Dimension(220, 50));
-        sideMenuButton_Restart.setBackground(new Color(244, 194, 66));
-        sideMenuButton_Restart.setFont(new Font("8BIT WONDER", Font.PLAIN, 28));
-        sideMenuButton_Restart.setForeground(Color.WHITE);
-        sideMenuButton_Restart.setBorder(new LineBorder(new Color(122, 122, 122)));
-        sideMenuButton_Restart.setFocusPainted(false);
-        sideMenuButton_Restart.addActionListener((e) -> {
-            levelManager.load(this.getClass());
-        });
-
-        sideMenuPanel.add(sideMenuButton_Restart);
-
-        JPanel sideMenuContainer = new JPanel();
-        sideMenuContainer.add(sideMenuPanel);
 
         GridBagConstraints levelConstraints = new GridBagConstraints();
         levelConstraints.fill = GridBagConstraints.BOTH;

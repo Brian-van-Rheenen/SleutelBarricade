@@ -3,6 +3,7 @@ package game.levels;
 import game.Game;
 import game.Level;
 import game.LevelManager;
+import game.components.GameButton;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -56,16 +57,7 @@ public class MainMenu extends Level {
         logo.setBorder(BorderFactory.createEmptyBorder(50, 0, 0, 0));
 
         // Buttons
-        JButton startButton = new JButton("Play");
-        startButton.setPreferredSize(new Dimension(150, 50));
-        startButton.setBackground(new Color(244, 194, 66));
-        startButton.setFont(new Font("8BIT WONDER", Font.PLAIN, 28));
-        startButton.setForeground(Color.WHITE);
-        startButton.setBorder(new LineBorder(new Color(122, 122, 122)));
-        startButton.setFocusPainted(false);
-        startButton.addActionListener((e) -> {
-            levelManager.load(Level1.class);
-        });
+        GameButton startButton = new GameButton("Play", (e) -> levelManager.load(Level1.class) );
 
         // Images
         URL characterUrl = this.getClass().getResource("/resources/sprites/main-menu/player.png");
