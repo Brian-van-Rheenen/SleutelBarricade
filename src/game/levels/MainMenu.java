@@ -48,7 +48,6 @@ public class MainMenu extends Level {
      * @return the window container panel that has and shows every element in the main menu.
      */
     @Override
-    @SuppressWarnings("Duplicates")
     public JPanel constructLevel() {
         // GIF logo
         URL logoUrl = this.getClass().getResource("/resources/sprites/main-menu/sleutel-barricade-logo.gif");
