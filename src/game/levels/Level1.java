@@ -88,7 +88,7 @@ public class Level1 extends Level {
         gameObjects.add(new Barricade(new Position(9,1), 90));
         gameObjects.add(new Barricade(new Position(9,3), 90));
         gameObjects.add(new Barricade(new Position(9,4), 50));
-
+        
         GridBagConstraints levelConstraints = new GridBagConstraints();
         levelConstraints.fill = GridBagConstraints.BOTH;
         levelConstraints.anchor = GridBagConstraints.CENTER;
