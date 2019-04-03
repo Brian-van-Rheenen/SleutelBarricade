@@ -55,6 +55,10 @@ public class Player extends GameObject implements KeyListener {
 
                         move(newPosition);
                     }
+                } else if (collider instanceof Goal) {
+                    Goal goal = (Goal) collider;
+                    // Execute the action on level end
+                    goal.getGoalHit().run();
                 }
 
 

@@ -32,7 +32,7 @@ public class Level1 extends Level {
 
         gameObjects.add(player);
 
-        gameObjects.add(new Goal(new Position(9,9)));
+        gameObjects.add(new Goal(new Position(9,9), () -> levelManager.load(Level2.class)));
 
         gameObjects.add(new Key(new Position(0,8), 200));
         gameObjects.add(new Key(new Position(4,1), 100));

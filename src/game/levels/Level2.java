@@ -32,7 +32,7 @@ public class Level2 extends Level {
 
         gameObjects.add(player);
 
-        gameObjects.add(new Goal(new Position(0,0)));
+        gameObjects.add(new Goal(new Position(0,0), () -> {}));
 
         gameObjects.add(new Wall(new Position(1,0)));
         gameObjects.add(new Wall(new Position(1,1)));

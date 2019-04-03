@@ -9,7 +9,7 @@ public class GoalTest {
 
     @Test
     public void can_create_Goal () {
-        Goal goal = new Goal (new Position(4,6));
+        Goal goal = new Goal (new Position(4,6), () -> {});
 
         assertEquals(4, goal.getPosition().getxPosition());
         assertEquals(6, goal.getPosition().getyPosition());
