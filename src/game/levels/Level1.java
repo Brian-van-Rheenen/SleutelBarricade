@@ -21,7 +21,6 @@ public class Level1 extends Level {
         // Level container panel
         JPanel levelContainer =  new JPanel(new GridBagLayout());
 
-        // TODO: Write method constructLevel in such a way that it contains a complete level
         PlayingField field = new PlayingField(this);
 
         // Create player and register for keyboard input with the KeyListener
@@ -94,18 +93,18 @@ public class Level1 extends Level {
 
         JPanel sideMenuPanel = new JPanel();
 
-        JButton sideMenuButton = new JButton("Restart");
-        sideMenuButton.setPreferredSize(new Dimension(220, 50));
-        sideMenuButton.setBackground(new Color(244, 194, 66));
-        sideMenuButton.setFont(new Font("8BIT WONDER", Font.PLAIN, 28));
-        sideMenuButton.setForeground(Color.WHITE);
-        sideMenuButton.setBorder(new LineBorder(new Color(122, 122, 122)));
-        sideMenuButton.setFocusPainted(false);
-        sideMenuButton.addActionListener((e) -> {
+        JButton sideMenuButton_Restart = new JButton("Restart");
+        sideMenuButton_Restart.setPreferredSize(new Dimension(220, 50));
+        sideMenuButton_Restart.setBackground(new Color(244, 194, 66));
+        sideMenuButton_Restart.setFont(new Font("8BIT WONDER", Font.PLAIN, 28));
+        sideMenuButton_Restart.setForeground(Color.WHITE);
+        sideMenuButton_Restart.setBorder(new LineBorder(new Color(122, 122, 122)));
+        sideMenuButton_Restart.setFocusPainted(false);
+        sideMenuButton_Restart.addActionListener((e) -> {
             levelManager.load(this.getClass());
         });
 
-        sideMenuPanel.add(sideMenuButton);
+        sideMenuPanel.add(sideMenuButton_Restart);
 
         JPanel sideMenuContainer = new JPanel();
         sideMenuContainer.add(sideMenuPanel);

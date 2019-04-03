@@ -21,7 +21,6 @@ public class Level2 extends Level {
         // Level container panel
         JPanel levelContainer =  new JPanel(new GridBagLayout());
 
-        // TODO: Write method constructLevel in such a way that it contains a complete level
         PlayingField field = new PlayingField(this);
 
         // Create player and register for keyboard input with the KeyListener
@@ -32,7 +31,7 @@ public class Level2 extends Level {
 
         gameObjects.add(player);
 
-        gameObjects.add(new Goal(new Position(0,0), () -> {}));
+        gameObjects.add(new Goal(new Position(0,0), () -> levelManager.load(Level1.class)));
 
         gameObjects.add(new Wall(new Position(1,0)));
         gameObjects.add(new Wall(new Position(1,1)));

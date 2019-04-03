@@ -45,7 +45,6 @@ public class Game {
 
     /**
      * Quit the application.
-     * TODO rename end() naar quit in Design diagram
      */
     public void quit() {
         System.exit(0);
