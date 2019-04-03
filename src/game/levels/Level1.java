@@ -21,7 +21,6 @@ public class Level1 extends Level {
         // Level container panel
         JPanel levelContainer =  new JPanel(new GridBagLayout());
 
-
         // TODO: Write method constructLevel in such a way that it contains a complete level
         PlayingField field = new PlayingField(this);
 
@@ -92,8 +91,6 @@ public class Level1 extends Level {
         gameObjects.add(new Barricade(new Position(9,1), 90));
         gameObjects.add(new Barricade(new Position(9,3), 90));
         gameObjects.add(new Barricade(new Position(9,4), 50));
-
-        //field.setBackground(Color.red);
 
         JPanel sideMenuPanel = new JPanel();
 

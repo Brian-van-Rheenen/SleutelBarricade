@@ -29,7 +29,6 @@ public class Player extends GameObject implements KeyListener {
         Position position = getPosition();
 
         if(playingField.isWithinBoundaries(newPosition)) {
-            // TODO: Check if we have collided with an object in the playingField
             Optional<GameObject> collidedObject = playingField.willCollide(newPosition);
 
             if(collidedObject.isPresent()) {

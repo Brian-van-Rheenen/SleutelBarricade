@@ -15,6 +15,10 @@ public class LevelManager {
 
         levels.put(MainMenu.class, () -> new MainMenu(this, game));
         levels.put(Level1.class, () -> new Level1(this, game));
+        levels.put(Level2.class, () -> new Level2(this, game));
+
+        // Unittest
+        levels.put(MockLevel.class, () -> new MockLevel(this, game));
     }
 
     public void load(Class<? extends Level> levelIdentifier) {

@@ -9,6 +9,4 @@ public class Goal extends GameObject{
         setImage(this.getClass().getResource("/resources/sprites/goal.png"));
     }
 
-
-
 }
