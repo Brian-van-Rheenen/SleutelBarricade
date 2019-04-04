@@ -8,6 +8,9 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
+/**
+ * Level 2 of the game, medium difficulty.
+ */
 public class Level2 extends Level {
 
     /**
