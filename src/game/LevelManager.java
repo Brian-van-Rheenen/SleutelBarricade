@@ -22,6 +22,9 @@ public class LevelManager {
         levels.put(Level2.class, () -> new Level2(this, game));
         levels.put(Level3.class, () -> new Level3(this, game));
 
+        // End screen
+        levels.put(EndScreen.class, () -> new EndScreen(this, game));
+
         // Level specifically ceated for Unittesting
         levels.put(MockLevel.class, () -> new MockLevel(this, game));
     }

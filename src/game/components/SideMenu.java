@@ -6,6 +6,9 @@ import game.LevelManager;
 
 import javax.swing.*;
 
+/**
+ * A side menu which contains interactable buttons to restart and end the game.
+ */
 public class SideMenu extends JPanel {
 
     /**

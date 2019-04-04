@@ -23,6 +23,7 @@ public class Level1 extends Level {
      * @return a JPanel containing a fully constructed level
      */
     @Override
+    @SuppressWarnings("Duplicates")
     public JPanel constructLevel() {
 
         // Level container panel
@@ -122,6 +123,8 @@ public class Level1 extends Level {
         SideMenu sideMenu = new SideMenu(levelManager, this.getClass(), game);
 
         levelContainer.add(sideMenu, levelConstraints);
+
+        setPanelBackgrounds(levelContainer, new Color(206, 206, 206));
 
         return levelContainer;
     }
