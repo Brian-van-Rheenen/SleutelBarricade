@@ -17,7 +17,7 @@ public class PlayingField extends JPanel {
 
     private List<GameObject> gameObjects;
 
-    private final int MAX_HEIGHT_CELL_AMOUNT = 10;
+    private final double MAX_HEIGHT_CELL_AMOUNT = 10;
 
     public PlayingField(Level level) {
         setLayout(new GridBagLayout());
@@ -75,19 +75,24 @@ public class PlayingField extends JPanel {
 
         g.setColor(Color.black);
 
-        Number cellHeight = (size / (double) MAX_HEIGHT_CELL_AMOUNT);
+        double cellHeight = (size / MAX_HEIGHT_CELL_AMOUNT);
+        int roundedCellHeight = roundDoubleCeil(cellHeight);
 
-
-        for(int collumn = 0; collumn < cellHeight.intValue() * MAX_HEIGHT_CELL_AMOUNT; collumn = collumn + cellHeight.intValue()) {
+        // In order to remove Rounding Error accumulation we use doubles for calculation and round them to ints
+        for (double collumn = 0; collumn < cellHeight * MAX_HEIGHT_CELL_AMOUNT; collumn = collumn + cellHeight) {
             // Draw a row
-            for(int row = 0; row < cellHeight.intValue() * MAX_HEIGHT_CELL_AMOUNT; row = row + cellHeight.intValue()) {
+            for (double row = 0; row < cellHeight * MAX_HEIGHT_CELL_AMOUNT; row = row + cellHeight) {
+
+                int roundedCollumn    = roundDoubleCeil(collumn);
+                int roundedRow        = roundDoubleCeil(row);
+
 
                 // Draw the cell
-                g.drawRect(collumn, row, cellHeight.intValue(), cellHeight.intValue());
+                g.drawRect(roundedCollumn, roundedRow, roundedCellHeight, roundedCellHeight);
             }
         }
 
-        int general = cellHeight.intValue() * MAX_HEIGHT_CELL_AMOUNT;
+        int general = (int) Math.ceil(cellHeight * MAX_HEIGHT_CELL_AMOUNT);
         setPreferredSize(new Dimension(general, general));
 
         // Draw all the different GameObjects on screen
@@ -96,23 +101,24 @@ public class PlayingField extends JPanel {
             // Calculate the actual pixel position for the image
             Position pos = gameObject.getPosition();
 
-            int actualX = cellHeight.intValue() * pos.getxPosition();
-            int actualY = cellHeight.intValue() * pos.getyPosition();
+            int actualX = roundDoubleCeil(cellHeight * pos.getxPosition());
+            int actualY = roundDoubleCeil(cellHeight * pos.getyPosition());
 
-            int valueX = cellHeight.intValue() * pos.getxPosition() + 5;
-            int valueY = cellHeight.intValue() * pos.getyPosition() + 17;
+            int valueX = roundDoubleCeil(cellHeight * (pos.getxPosition() + 5));
+            int valueY = roundDoubleCeil(cellHeight * (pos.getxPosition() + 17));
 
             try {
                 // Load the image from the URL
                 Image image = ImageIO.read(gameObject.getUrl());
 
                 // Draw the Image on the screen, resize to the full size of the cell
-                g.drawImage(image, actualX, actualY, cellHeight.intValue(), cellHeight.intValue(), this);
+                g.drawImage(image, actualX, actualY, roundedCellHeight, roundedCellHeight, this);
 
                 // If the GameObject has a value
                 if(gameObject.getValue() > 0) {
                     // Create a string with its value in the top left of the cell
                     g.setFont(new Font("VCR OSD Mono", Font.PLAIN, 16));
+
                     g.drawString(Integer.toString(gameObject.getValue()), valueX, valueY);
                 }
 
@@ -122,5 +128,14 @@ public class PlayingField extends JPanel {
                 continue;
             }
         }
+    }
+
+    /**
+     * Round the given double to int using ceiling rounding
+     * @param value the value to round and convert to int
+     * @return the converted value
+     */
+    private int roundDoubleCeil(double value) {
+        return (int) Math.ceil(value);
     }
 }
