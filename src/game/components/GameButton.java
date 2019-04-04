@@ -30,11 +30,13 @@ public class GameButton extends JButton {
     public GameButton(String text) {
         super(text);
 
+        setMaximumSize(new Dimension(220, 50));
         setPreferredSize(new Dimension(220, 50));
         setBackground(new Color(244, 194, 66));
         setFont(new Font("8BIT WONDER", Font.PLAIN, 28));
         setForeground(Color.WHITE);
         setBorder(new LineBorder(new Color(122, 122, 122)));
         setFocusPainted(false);
+
     }
 }
