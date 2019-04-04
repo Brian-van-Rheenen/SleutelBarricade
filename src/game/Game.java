@@ -3,7 +3,7 @@ package game;
 import game.levels.MainMenu;
 
 import javax.swing.*;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.KeyListener;
 
 public class Game {

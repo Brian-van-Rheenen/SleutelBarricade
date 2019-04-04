@@ -126,29 +126,4 @@ public class MainMenu extends Level {
 
         return containerPanel;
     }
-
-    /**
-     * Set the background color of ALL JPanels by iterating through all components that are an instance of JPanel.
-     * @param containerPanel The container panel that contains all present elements in the main menu.
-     */
-    public void setPanelBackgrounds(JPanel containerPanel, Color color) {
-
-        // Loop through all components of the given JPanel
-        for (Component component: containerPanel.getComponents()) {
-
-            // If this component is an instance of a JPanel
-            if (component instanceof JPanel) {
-
-                // Set the background color
-                component.setBackground(color);
-
-                // If this JPanel has any more child components that are an instance of JPanel
-                if(component instanceof JPanel) {
-
-                    // Recur
-                    setPanelBackgrounds((JPanel) component, color);
-                }
-            }
-        }
-    }
 }

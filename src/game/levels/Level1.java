@@ -123,6 +123,8 @@ public class Level1 extends Level {
 
         levelContainer.add(sideMenu, levelConstraints);
 
+        setPanelBackgrounds(levelContainer, new Color(206, 206, 206));
+
         return levelContainer;
     }
 }
