@@ -23,6 +23,7 @@ public class Level1 extends Level {
      * @return a JPanel containing a fully constructed level
      */
     @Override
+    @SuppressWarnings("Duplicates")
     public JPanel constructLevel() {
 
         // Level container panel
