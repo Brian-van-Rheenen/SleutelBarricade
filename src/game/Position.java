@@ -1,6 +1,8 @@
 package game;
 
-
+/**
+ * Represents X and Y coordinates in a finite grid
+ */
 public class Position {
 
     private int xPosition;

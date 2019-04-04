@@ -6,6 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyListener;
 
+/**
+ * The Main window of the game
+ */
 public class Game {
     private JFrame window = new JFrame();
     private LevelManager manager;

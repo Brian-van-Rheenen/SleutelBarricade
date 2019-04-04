@@ -1,3 +1,6 @@
+/**
+ * Contains all the GameObjects that are being used by the game.
+ */
 package game.objects;
 
 import game.Position;

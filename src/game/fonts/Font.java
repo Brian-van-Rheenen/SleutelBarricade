@@ -1,3 +1,6 @@
+/**
+ * Contains Font management classes.
+ */
 package game.fonts;
 
 import java.awt.*;
