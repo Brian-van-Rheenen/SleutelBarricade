@@ -104,8 +104,8 @@ public class PlayingField extends JPanel {
             int actualX = roundDoubleCeil(cellHeight * pos.getxPosition());
             int actualY = roundDoubleCeil(cellHeight * pos.getyPosition());
 
-            int valueX = roundDoubleCeil(cellHeight * (pos.getxPosition() + 5));
-            int valueY = roundDoubleCeil(cellHeight * (pos.getxPosition() + 17));
+            int valueX = (int) Math.round(cellHeight * pos.getxPosition() + 5);
+            int valueY = (int) Math.round(cellHeight * pos.getyPosition() + 17);
 
             try {
                 // Load the image from the URL
@@ -136,6 +136,6 @@ public class PlayingField extends JPanel {
      * @return the converted value
      */
     private int roundDoubleCeil(double value) {
-        return (int) Math.ceil(value);
+        return (int) Math.floor(value);
     }
 }
