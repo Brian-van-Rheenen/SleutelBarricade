@@ -10,10 +10,19 @@ import java.awt.*;
 
 public class Level2 extends Level {
 
+    /**
+     * Level 2 of the game
+     * @param levelManager manages the level
+     * @param game contains the level
+     */
     public Level2(LevelManager levelManager, Game game) {
         super(levelManager, game);
     }
 
+    /**
+     * Construct the level
+     * @return a JPanel containing a fully constructed level
+     */
     @Override
     @SuppressWarnings("Duplicates")
     public JPanel constructLevel() {
@@ -31,8 +40,10 @@ public class Level2 extends Level {
 
         gameObjects.add(player);
 
+        // Create and add the goal
         gameObjects.add(new Goal(new Position(0,0), () -> levelManager.load(Level1.class)));
 
+        // Create and add the different walls
         gameObjects.add(new Wall(new Position(1,0)));
         gameObjects.add(new Wall(new Position(1,1)));
         gameObjects.add(new Wall(new Position(1,2)));
@@ -76,6 +87,7 @@ public class Level2 extends Level {
         gameObjects.add(new Wall(new Position(9,7)));
         gameObjects.add(new Wall(new Position(9,8)));
 
+        // Create and add the different barricades
         gameObjects.add(new Barricade(new Position(0,4), 600));
         gameObjects.add(new Barricade(new Position(0,5), 500));
         gameObjects.add(new Barricade(new Position(0,6), 400));
@@ -88,6 +100,7 @@ public class Level2 extends Level {
         gameObjects.add(new Barricade(new Position(7,8), 300));
         gameObjects.add(new Barricade(new Position(8,2), 500));
 
+        // Create and add the different keys
         gameObjects.add(new Key(new Position(0,9), 200));
         gameObjects.add(new Key(new Position(4,6), 300));
         gameObjects.add(new Key(new Position(6,1), 100));

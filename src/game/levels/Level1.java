@@ -9,10 +9,19 @@ import java.awt.*;
 
 public class Level1 extends Level {
 
+    /**
+     * Level 1 of the game
+     * @param levelManager manages the level
+     * @param game contains the level
+     */
     public Level1(LevelManager levelManager, Game game) {
         super(levelManager, game);
     }
 
+    /**
+     * Construct the level
+     * @return a JPanel containing a fully constructed level
+     */
     @Override
     public JPanel constructLevel() {
 
@@ -29,13 +38,16 @@ public class Level1 extends Level {
 
         gameObjects.add(player);
 
+        // Create and add the goal
         gameObjects.add(new Goal(new Position(9,9), () -> levelManager.load(Level2.class)));
 
+        // Create and add the different keys
         gameObjects.add(new Key(new Position(0,8), 200));
         gameObjects.add(new Key(new Position(4,1), 100));
         gameObjects.add(new Key(new Position(5,1), 300));
         gameObjects.add(new Key(new Position(9,2), 100));
 
+        // Create and add the different walls
         gameObjects.add(new Wall(new Position(1,0)));
         gameObjects.add(new Wall(new Position(1,3)));
         gameObjects.add(new Wall(new Position(1,4)));
@@ -54,6 +66,7 @@ public class Level1 extends Level {
         gameObjects.add(new Wall(new Position(7,8)));
         gameObjects.add(new Wall(new Position(7,9)));
 
+        // Create and add the different barricades
         gameObjects.add(new Barricade(new Position(1,5), 200));
         gameObjects.add(new Barricade(new Position(1,5), 200));
         gameObjects.add(new Barricade(new Position(2,0), 100));
