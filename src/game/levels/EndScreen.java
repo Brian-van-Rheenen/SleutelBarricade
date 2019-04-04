@@ -10,12 +10,47 @@ import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
 
+/**
+ * The end screen of the game.
+ */
 public class EndScreen extends Level {
 
+    /**
+     * Construct the end screen.
+     * @param levelManager manages the level.
+     * @param game contains the level.
+     */
     public EndScreen(LevelManager levelManager, Game game) {
         super(levelManager, game);
     }
 
+    /**
+     * GIF logo:
+     *  - The main menu splash title.
+     *
+     * Text:
+     *  - The labels on the screen.
+     *
+     * Buttons:
+     *  - Interactable button that leads to the main menu.
+     *
+     * Top panel:
+     *  - This is the top panel. This panel contains the splash title logo.
+     *
+     * Center Container Panel:
+     *  - This is the container panel for the center panel. This container panel contains the center panel.
+     *
+     *  - Center panel:
+     *      -This is the center panel. This panel contains the interactable button.
+     *
+     *      - Button panel:
+     *          - This panel contains the start and quit buttons.
+     *
+     * Window Container panel:
+     *  - This is the window container panel. This container panel contains all present elements in the main menu.
+     *
+     * @return the window container panel that has and shows every element in the main menu.
+     */
     @Override
     @SuppressWarnings("Duplicates")
     public JPanel constructLevel() {
@@ -32,10 +67,9 @@ public class EndScreen extends Level {
         // Text
         GameLabel congratulations = new GameLabel("Congratulations");
         congratulations.setFont(new Font("8BIT WONDER", Font.PLAIN, 24));
-
         GameLabel completed = new GameLabel("You completed the game");
 
-        // Buttons
+        // Button
         GameButton quitButton = new GameButton("Exit", (e) -> game.exit() );
 
         // Button panel

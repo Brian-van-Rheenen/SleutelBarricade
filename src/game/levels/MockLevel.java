@@ -5,6 +5,9 @@ import game.objects.*;
 
 import javax.swing.*;
 
+/**
+ * A mock level used for unittests
+ */
 public class MockLevel extends Level {
 
     /**

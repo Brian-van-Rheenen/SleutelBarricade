@@ -10,7 +10,7 @@ import java.awt.*;
 public class Level3 extends Level {
 
     /**
-     * Level 3  of the game
+     * Level 3 of the game
      * @param levelManager manages the level
      * @param game contains the level
      */
