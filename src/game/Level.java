@@ -12,6 +12,11 @@ public abstract class Level extends JPanel {
     protected LevelManager levelManager;
     protected List<GameObject> gameObjects = new ArrayList<>();
 
+    /**
+     * Template for every other level
+     * @param levelManager manages all the levels
+     * @param game contains all the levels
+     */
     public Level(LevelManager levelManager, Game game) {
         this.game = game;
         this.levelManager = levelManager;
@@ -23,6 +28,10 @@ public abstract class Level extends JPanel {
      */
     public abstract JPanel constructLevel();
 
+    /**
+     * Get the GameObjects in a level
+     * @return the list of multiple GameObjects
+     */
     public List<GameObject> getGameObjects() {
         return gameObjects;
     }

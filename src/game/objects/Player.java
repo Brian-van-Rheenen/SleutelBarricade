@@ -7,15 +7,16 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Optional;
 
-/**
- * The player object that the user controls
- */
 public class Player extends GameObject implements KeyListener {
 
     private int currentKey;
     private PlayingField playingField;
 
-    // TODO: Break the dependency on the PlayingField
+    /**
+     * A playable character in the game
+     * @param position the Position of the player
+     * @param field the PlayingField in which the player is located
+     */
     public Player(Position position, PlayingField field) {
         super(position);
         playingField = field;
@@ -23,8 +24,6 @@ public class Player extends GameObject implements KeyListener {
         setFocusable(true);
         setImage(this.getClass().getResource("/resources/sprites/player.png"));
     }
-
-    // Think about the boundaries! Position has a minimal value of 0,0 and a maximum value of however big the playing field is minus one!
 
     /**
      * Move the player to a new position, and interact with any GameObjects in the world
@@ -74,20 +73,40 @@ public class Player extends GameObject implements KeyListener {
 
     }
 
+    /**
+     * Get the value of the key currently in the pocket of the player
+     * @return the value of the pocketed key
+     */
     public int getCurrentKey() {
         return currentKey;
     }
 
+    /**
+     * Set the value of the key that is going in the pocket of the player
+     * @param currentKey the value of the new key
+     */
     public void setCurrentKey(int currentKey) {
         this.currentKey = currentKey;
     }
 
+    /**
+     * Currently not used in the game, but necessary for method KeyReleased to work
+     * @param e the event of a typed key on the keyboard
+     */
     @Override
     public void keyTyped(KeyEvent e) { }
 
+    /**
+     * Currently not used in the game, but necessary for method KeyReleased to work
+     * @param e the event of a pressed key on the keyboard
+     */
     @Override
     public void keyPressed(KeyEvent e) { }
 
+    /**
+     * Listen to the different key pressed on the user's keyboard. This is used for movement of the player
+     * @param e the event of a keypress
+     */
     @Override
     public void keyReleased(KeyEvent e) {
         Position updatedPosition = getPosition();

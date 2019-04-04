@@ -9,6 +9,11 @@ import java.awt.*;
 
 public class SideMenu extends JPanel {
 
+    /**
+     * A side menu containing different buttons
+     * @param levelManager manages the level in which the side menu is used
+     * @param currentLevel the current level in which the side menu is used
+     */
     public SideMenu(LevelManager levelManager, Class<? extends Level> currentLevel) {
         super();
 
