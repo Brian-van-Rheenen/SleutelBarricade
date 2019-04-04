@@ -1,5 +1,7 @@
 package game;
 
+import game.levels.MainMenu;
+
 import javax.swing.*;
 import java.awt.event.KeyListener;
 
@@ -44,10 +46,14 @@ public class Game {
     }
 
     /**
-     * Quit the application.
+     * Return to the main menu.
      */
-    public void quit() {
-        System.exit(0);
+    public void exit() {
+        manager.load(MainMenu.class);
     }
 
+    /**
+     * Quit the application
+     */
+    public void quit() { System.exit(0); }
 }

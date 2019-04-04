@@ -126,7 +126,7 @@ public class Level2 extends Level {
         levelConstraints.weighty = 1;
         levelConstraints.insets = new Insets(25, 0, 0, 0);
 
-        SideMenu sideMenu = new SideMenu(levelManager, this.getClass());
+        SideMenu sideMenu = new SideMenu(levelManager, this.getClass(), game);
 
         levelContainer.add(sideMenu, levelConstraints);
 
