@@ -41,7 +41,7 @@ public class Level2 extends Level {
         gameObjects.add(player);
 
         // Create and add the goal
-        gameObjects.add(new Goal(new Position(0,0), () -> levelManager.load(Level1.class)));
+        gameObjects.add(new Goal(new Position(0,0), () -> levelManager.load(Level3.class)));
 
         // Create and add the different walls
         gameObjects.add(new Wall(new Position(1,0)));
