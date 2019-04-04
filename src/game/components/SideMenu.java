@@ -1,3 +1,6 @@
+/**
+ * Contains custom GUI objects used by the game
+ */
 package game.components;
 
 import game.Game;

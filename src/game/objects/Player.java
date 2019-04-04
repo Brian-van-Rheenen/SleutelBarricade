@@ -7,6 +7,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Optional;
 
+/**
+ * The Controllable Player object, also contains interaction logic for the object
+ */
 public class Player extends GameObject implements KeyListener {
 
     private int currentKey;

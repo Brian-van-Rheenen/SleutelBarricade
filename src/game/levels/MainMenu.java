@@ -1,3 +1,6 @@
+/**
+ * Contains all the levels used in the game.
+ */
 package game.levels;
 
 import game.Game;

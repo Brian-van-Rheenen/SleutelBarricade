@@ -7,6 +7,9 @@ import game.objects.*;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Level 1 of the Game, Easy difficulty.
+ */
 public class Level1 extends Level {
 
     /**

@@ -7,6 +7,9 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The template for every other level
+ */
 public abstract class Level extends JPanel {
 
     protected Game game;
@@ -14,7 +17,7 @@ public abstract class Level extends JPanel {
     protected List<GameObject> gameObjects = new ArrayList<>();
 
     /**
-     * Template for every other level
+     * Template for every other level, initializes the Game and the LevelManager instances
      * @param levelManager manages all the levels
      * @param game contains all the levels
      */
@@ -39,7 +42,8 @@ public abstract class Level extends JPanel {
 
     /**
      * Set the background color of ALL JPanels by iterating through all components that are an instance of JPanel.
-     * @param containerPanel The container panel that contains all present elements in the main menu.
+     * @param containerPanel The parent container we are iterating through
+     * @param color The background color of the panel
      */
     public void setPanelBackgrounds(JPanel containerPanel, Color color) {
 

@@ -1,7 +1,13 @@
+/**
+ * Contains all the GameObjects that are being used by the game.
+ */
 package game.objects;
 
 import game.Position;
 
+/**
+ * A barricade which can be opened by giving it the correct key.
+ */
 public class Barricade extends GameObject {
 
     /**

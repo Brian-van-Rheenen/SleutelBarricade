@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
+/**
+ * Manages loading of levels in the GameWindow
+ */
 public class LevelManager {
     private Map<Class<? extends Level>, Callable<Level>> levels = new HashMap<>();
     private Game game;
