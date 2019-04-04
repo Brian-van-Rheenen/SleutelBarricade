@@ -28,7 +28,7 @@ public class SideMenu extends JPanel {
         // Center panel
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
-        centerPanel.add(Box.createVerticalStrut(25));
+        centerPanel.add(Box.createVerticalStrut(50));
 
         centerPanel.add(new GameButton("Restart", (e) -> levelManager.load(currentLevel)));
         centerPanel.add(Box.createVerticalStrut(30));

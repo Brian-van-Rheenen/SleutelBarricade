@@ -137,11 +137,12 @@ public class Level3 extends Level {
         levelConstraints.gridy = 0;
         levelConstraints.weightx = 0.33;
         levelConstraints.weighty = 1;
-        levelConstraints.insets = new Insets(25, 0, 0, 0);
 
         SideMenu sideMenu = new SideMenu(levelManager, this.getClass(), game);
 
         levelContainer.add(sideMenu, levelConstraints);
+
+        setPanelBackgrounds(levelContainer, new Color(206, 206, 206));
 
         return levelContainer;
     }
