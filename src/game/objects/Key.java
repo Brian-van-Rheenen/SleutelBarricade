@@ -2,6 +2,9 @@ package game.objects;
 
 import game.Position;
 
+/**
+ * The key to open a {@link Barricade} with
+ */
 public class Key extends GameObject {
 
     /**

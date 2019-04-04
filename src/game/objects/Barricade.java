@@ -5,6 +5,9 @@ package game.objects;
 
 import game.Position;
 
+/**
+ * A barricade which can be opened by giving it the correct key.
+ */
 public class Barricade extends GameObject {
 
     /**

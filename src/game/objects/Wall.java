@@ -2,6 +2,9 @@ package game.objects;
 
 import game.Position;
 
+/**
+ * An Indestructible wall, the player cannot go through this.
+ */
 public class Wall extends GameObject{
 
     /**

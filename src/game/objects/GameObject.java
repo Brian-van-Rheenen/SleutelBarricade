@@ -4,7 +4,9 @@ import game.Position;
 import javax.swing.*;
 import java.net.URL;
 
-
+/**
+ * The base class for all GameObjects
+ */
 public abstract class GameObject extends JPanel {
 
     private int value;

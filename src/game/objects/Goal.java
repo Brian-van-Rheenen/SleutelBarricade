@@ -2,6 +2,9 @@ package game.objects;
 
 import game.Position;
 
+/**
+ * The end goal where the player has to travel to
+ */
 public class Goal extends GameObject {
 
     private Runnable goalHit;
