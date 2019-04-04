@@ -3,6 +3,7 @@ package game;
 import game.levels.MainMenu;
 
 import javax.swing.*;
+import java.awt.Dimension;
 import java.awt.event.KeyListener;
 
 public class Game {
@@ -15,6 +16,7 @@ public class Game {
      */
     public Game(Class<? extends Level> startLevel) {
         window.setSize(1080, 720);
+        window.setMinimumSize(new Dimension(1080, 710));
         window.setTitle("Sleutel Barricade");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);

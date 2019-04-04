@@ -6,7 +6,6 @@ import game.LevelManager;
 import game.components.GameButton;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.net.URL;
 
@@ -35,6 +34,9 @@ public class MainMenu extends Level {
      * Center panel:
      *  -This is the center panel. This panel contains the interactable buttons.
      *
+     *  - Button panel:
+     *      - This panel contains the start and quit buttons.
+     *
      * Bottom panel:
      *  - This is the bottom panel. This panel contains the character image and an image container to group the wall and barricade image together.
      *
@@ -57,6 +59,7 @@ public class MainMenu extends Level {
 
         // Buttons
         GameButton startButton = new GameButton("Play", (e) -> levelManager.load(Level1.class) );
+        GameButton quitButton = new GameButton("Quit", (e) -> game.quit() );
 
         // Images
         URL characterUrl = this.getClass().getResource("/resources/sprites/main-menu/player.png");
@@ -75,10 +78,17 @@ public class MainMenu extends Level {
         JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.add(logo);
 
+        // Button panel
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
+        buttonPanel.add(startButton);
+        buttonPanel.add(Box.createVerticalStrut(30));
+        buttonPanel.add(quitButton);
+
         // Center panel
         JPanel centerPanel = new JPanel();
         centerPanel.setBorder(BorderFactory.createEmptyBorder(25, 0, 0, 0));
-        centerPanel.add(startButton);
+        centerPanel.add(buttonPanel);
 
         // Wall panel
         JPanel wallPanel = new JPanel();
@@ -95,7 +105,7 @@ public class MainMenu extends Level {
 
         // Container panel for images
         JPanel imagesContainerPanel = new JPanel(new BorderLayout());
-        imagesContainerPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 30, 80));
+        imagesContainerPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 80));
         imagesContainerPanel.add(imagesPanel, BorderLayout.EAST);
 
         // Bottom panel
@@ -119,7 +129,7 @@ public class MainMenu extends Level {
 
     /**
      * Set the background color of ALL JPanels by iterating through all components that are an instance of JPanel.
-     * @param containerPanel
+     * @param containerPanel The container panel that contains all present elements in the main menu.
      */
     public void setPanelBackgrounds(JPanel containerPanel, Color color) {
 
