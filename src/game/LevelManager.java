@@ -20,6 +20,7 @@ public class LevelManager {
         levels.put(MainMenu.class, () -> new MainMenu(this, game));
         levels.put(Level1.class, () -> new Level1(this, game));
         levels.put(Level2.class, () -> new Level2(this, game));
+        levels.put(Level3.class, () -> new Level3(this, game));
 
         // End screen
         levels.put(EndScreen.class, () -> new EndScreen(this, game));
