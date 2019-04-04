@@ -1,19 +1,30 @@
 package game.levels;
 
 import game.*;
-import game.levels.panels.SideMenu;
+import game.components.SideMenu;
 import game.objects.*;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
+/**
+ * Level 1 of the Game, Easy difficulty.
+ */
 public class Level1 extends Level {
 
+    /**
+     * Level 1 of the game
+     * @param levelManager manages the level
+     * @param game contains the level
+     */
     public Level1(LevelManager levelManager, Game game) {
         super(levelManager, game);
     }
 
+    /**
+     * Construct the level
+     * @return a JPanel containing a fully constructed level
+     */
     @Override
     @SuppressWarnings("Duplicates")
     public JPanel constructLevel() {
@@ -21,7 +32,6 @@ public class Level1 extends Level {
         // Level container panel
         JPanel levelContainer =  new JPanel(new GridBagLayout());
 
-        // TODO: Write method constructLevel in such a way that it contains a complete level
         PlayingField field = new PlayingField(this);
 
         // Create player and register for keyboard input with the KeyListener
@@ -32,13 +42,16 @@ public class Level1 extends Level {
 
         gameObjects.add(player);
 
-        gameObjects.add(new Goal(new Position(9,9)));
+        // Create and add the goal
+        gameObjects.add(new Goal(new Position(9,9), () -> levelManager.load(Level2.class)));
 
+        // Create and add the different keys
         gameObjects.add(new Key(new Position(0,8), 200));
         gameObjects.add(new Key(new Position(4,1), 100));
         gameObjects.add(new Key(new Position(5,1), 300));
         gameObjects.add(new Key(new Position(9,2), 100));
 
+        // Create and add the different walls
         gameObjects.add(new Wall(new Position(1,0)));
         gameObjects.add(new Wall(new Position(1,3)));
         gameObjects.add(new Wall(new Position(1,4)));
@@ -57,6 +70,7 @@ public class Level1 extends Level {
         gameObjects.add(new Wall(new Position(7,8)));
         gameObjects.add(new Wall(new Position(7,9)));
 
+        // Create and add the different barricades
         gameObjects.add(new Barricade(new Position(1,5), 200));
         gameObjects.add(new Barricade(new Position(1,5), 200));
         gameObjects.add(new Barricade(new Position(2,0), 100));
@@ -92,24 +106,6 @@ public class Level1 extends Level {
         gameObjects.add(new Barricade(new Position(9,3), 90));
         gameObjects.add(new Barricade(new Position(9,4), 50));
 
-        JPanel sideMenuPanel = new JPanel();
-
-        JButton sideMenuButton = new JButton("Restart");
-        sideMenuButton.setPreferredSize(new Dimension(220, 50));
-        sideMenuButton.setBackground(new Color(244, 194, 66));
-        sideMenuButton.setFont(new Font("8BIT WONDER", Font.PLAIN, 28));
-        sideMenuButton.setForeground(Color.WHITE);
-        sideMenuButton.setBorder(new LineBorder(new Color(122, 122, 122)));
-        sideMenuButton.setFocusPainted(false);
-        sideMenuButton.addActionListener((e) -> {
-            levelManager.load(this.getClass());
-        });
-
-        sideMenuPanel.add(sideMenuButton);
-
-        JPanel sideMenuContainer = new JPanel();
-        sideMenuContainer.add(sideMenuPanel);
-
         GridBagConstraints levelConstraints = new GridBagConstraints();
         levelConstraints.fill = GridBagConstraints.BOTH;
         levelConstraints.anchor = GridBagConstraints.CENTER;
@@ -126,11 +122,12 @@ public class Level1 extends Level {
         levelConstraints.gridy = 0;
         levelConstraints.weightx = 0.33;
         levelConstraints.weighty = 1;
-        levelConstraints.insets = new Insets(25, 0, 0, 0);
 
-        SideMenu sideMenu = new SideMenu(levelManager, this.getClass());
+        SideMenu sideMenu = new SideMenu(levelManager, this.getClass(), game);
 
         levelContainer.add(sideMenu, levelConstraints);
+
+        setPanelBackgrounds(levelContainer, new Color(206, 206, 206));
 
         return levelContainer;
     }

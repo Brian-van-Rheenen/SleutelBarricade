@@ -5,12 +5,15 @@ import game.objects.*;
 
 import javax.swing.*;
 
+/**
+ * A mock level used for unittests
+ */
 public class MockLevel extends Level {
 
     /**
      * This level is created for testing
-     * @param levelManager
-     * @param game
+     * @param levelManager manages the level
+     * @param game contains the level (only for testing)
      */
     public MockLevel(LevelManager levelManager, Game game) {
         super(levelManager, game);

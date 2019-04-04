@@ -1,8 +1,14 @@
 package game;
 
+import game.levels.MainMenu;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyListener;
 
+/**
+ * The Main window of the game
+ */
 public class Game {
     private JFrame window = new JFrame();
     private LevelManager manager;
@@ -13,6 +19,7 @@ public class Game {
      */
     public Game(Class<? extends Level> startLevel) {
         window.setSize(1080, 720);
+        window.setMinimumSize(new Dimension(1080, 710));
         window.setTitle("Sleutel Barricade");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
@@ -44,11 +51,14 @@ public class Game {
     }
 
     /**
-     * Quit the application.
-     * TODO rename end() naar quit in Design diagram
+     * Return to the main menu.
      */
-    public void quit() {
-        System.exit(0);
+    public void exit() {
+        manager.load(MainMenu.class);
     }
 
+    /**
+     * Quit the application
+     */
+    public void quit() { System.exit(0); }
 }
