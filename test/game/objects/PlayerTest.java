@@ -29,14 +29,4 @@ public class PlayerTest {
         assertEquals(100, player.getCurrentKey());
 
     }
-
-    @Test
-    public void can_register_key_press_to_move() {
-        Player player = new Player(new Position(5,7), new PlayingField(new MockLevel(new LevelManager(new Game(MockLevel.class)), new Game(MockLevel.class)) {}));
-
-
-//        player.keyPressed(KeyEvent.VK_W);
-//        player.keyReleased(KeyEvent.VK_W);
-
-    }
 }
