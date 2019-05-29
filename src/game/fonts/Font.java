@@ -8,14 +8,6 @@ import java.io.IOException;
 
 /**
  * Font class that initialize custom imported fonts.
- *
- * 8-bit-wonders font:
- * @author Joiro Hatgaya
- * Via: https://www.dafont.com/8bit-wonder.font
- *
- * VCR OSD Mono font.
- * @author Riciery Leal
- * Via: https://www.dafont.com/vcr-osd-mono.font
  */
 public class Font {
     private GraphicsEnvironment ge;
@@ -33,6 +25,8 @@ public class Font {
 
     /**
      * Initialize the 8-bit-wonders font.
+     * @author Joiro Hatgaya
+     * Via: https://www.dafont.com/8bit-wonder.font
      */
     public void initialize8BitWonders() {
         try {
@@ -42,6 +36,8 @@ public class Font {
 
     /**
      * Initialize the VCR OSD Mono font.
+     * @author Riciery Leal
+     * Via: https://www.dafont.com/vcr-osd-mono.font
      */
     public void initializeVCR_OSD_Mono() {
         try {
